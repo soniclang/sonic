@@ -23,12 +23,31 @@ Swift is a fantastic language, but is tied really strongly to the Apple ecosyste
 * We've been inspired by Zig's success and hope to emulate this! In that vein, I'm accepting donations.
 * We'd love to make an incremental compiler that is as fast as TCC, to "Optimize for programmer happiness" as the Rails folk like to say. We might kill a few sacred cows to this end.
 * The [BHAG](https://www.jimcollins.com/article_topics/articles/BHAG.html) is to use Sonic as the foundation for a cross-platform mobile app development framework, something akin to React Native.
+* Where this readme says 'I' it means Chris; where it says 'We' it means Chris and Andres.
 
-## Current status
+## Syntax
+
+![Syntax](https://frinkiac.com/img/S05E10/146195.jpg)
+
+The semantics and syntax boils down to 'as close as we can reasonably get to Swift' at this stage. I fully expect we'll end up with a subset though. For instance: generics might not happen on first release.
+
+Plus, we may take the liberty to add non-Swift features that we deem useful / interesting / fun.
+
+## Self-hosting compiler
+
+![WITHOUT A DOUBT, THE WORST COMPILER EVER.](https://frinkiac.com/img/S08E14/944125.jpg)
+
+Once we have implemented enough, we hope (dream?) to make this compiler self-hosting (eg the sonic compiler will be written in sonic, and compile itself). I imagine that since we will be a a subset of swift, we'll have to refactor the compiler somewhat to allow that to happen.
+
+We aim to implement a faithful-enough subset that the compiler will then compile with either Sonic or proper Swift. That way we can always bootstrap using the Swift compiler.
+
+## Roadmap
 
 ![And you call it a language despite the fact it is obviously just a lexer.](https://frinkiac.com/img/S07E21/597980.jpg)
 
-So far we have a lexer! This is the first step. We're working on the parser next. The lexer takes source code and outputs tokens. The parser takes the tokens and outputs an Abstract Syntax Tree. Andres has already begun work on the final step: converting an AST into C.
+So far we have a lexer! This is the first step. I'm now working on the parser.
+
+The lexer takes source code and outputs tokens. The parser takes the tokens and outputs an Abstract Syntax Tree. Andres has already begun work on the final step: converting an AST into C.
 
 ## License
 
